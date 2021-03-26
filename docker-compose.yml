@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+
+  db:
+    container_name: bytebank-db
+    image: postgres
+    restart: always
+    ports:
+      - 5400:5432
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_USER=docker
+      - POSTGRES_DB=bytebank
+    volumes:
+      - ./db/data/
